@@ -23,23 +23,23 @@ María de los Ángeles Lasa
 - Bootstrap
 
 # Requisitos para correr el proyecto
-## Instalar:
+## Instalación de entornos
 ```python
 python version 3.10.8 
 django version 4.0.3
 pillow version 9.3.6
 whitenoise version 6.2.0
 ```
-## Correr los siguientes comandos en Visual Studio Code: 
+## Comandos para Visual Studio Code
 ```python
 > python manage.py makemigrations
 > python manage.py migrate
 > python manage.py collectstatic (yes)
 > python manage.py runserver
 ```
-## Visualización:
+## Visualización
 - Ingresar a http://127.0.0.1:8000/ en el navegador.
-## Panel reservado a usuario administrador:
+## Panel de usuario administrador
 - Ingresar a http://127.0.0.1:8000/admin/ en el navegador.
 ```python
 User: admin
@@ -47,3 +47,5 @@ Correo electrónico: admin@blablablog.com
 Password: blablablogadmin123
 ```
 - El administrador tiene todos los accesos previstos para un usuario regular pero se suman funciones adicionales, como ser la edición y/o eliminación de reseñas, la gestión de formularios y el overview general de posts generados en la web.
+## Demostración
+Video disponible [aquí](https://www.youtube.com/watch?v=L0qydoVS2jY).
