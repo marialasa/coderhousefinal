@@ -9,8 +9,8 @@ María de los Ángeles Lasa
 
 - Cree su cuenta de registro e inicie sesión desde la homepage
 - Modifique o elimine su usuario
-- Busca y acceda a todos los posts publicados por otros usuarios
-- Cree, edite y/o borre posts
+- Busque y acceda a todos los posts publicados por otros usuarios
+- Cree, edite y/o borre posts que incluyan fotografías
 - Complete y envíe un formulario de contacto
 - Deje una reseña en "Sobre BlaBlaBlog"
 
