@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% block nav %}{% endblock %}
+{% block contenido %}
+{% load static %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{% static 'blog/assets/img/f.jpg' %}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h2>🗣️ BlaBlaBlogs</h2>
+                            <span>Sumate a BlaBlaBlog y hablá de lo que quieras</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <div class="container px-8 px-lg-5">
+            <div class="row gx-8 gx-lg-15 justify-content-center">
+                <div class="col-md-10 col-lg-10 col-xl-5 ">
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                            <h3 class="post-title">¿Qué tenés ganas de escribir?</h3>
+                    </div>
+                    ¡Estás a solo un clic! 👉 <a class="btn btn-outline-dark flex-shrink-0" href="{% url 'index-blog' %}">Ingresar</a>
+                </div>
+            </div>
+        </div> 
+{% endblock %}

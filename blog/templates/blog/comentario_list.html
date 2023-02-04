@@ -1,0 +1,55 @@
+{% extends 'blog/base.html' %}
+{% block nav %}{% endblock %}
+{% block contenido %}
+{% load static %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{% static 'blog/assets/img/b.jpg' %}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h2>Sobre 🗣️ BlaBlaBlog</h2>
+                            <span>Nuestra propuesta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h3>¿Qué es BlaBlaBlog?</h3>
+                        <p>💡 Si querés impulsar tu negocio, ganar clientes, obtener un mejor empleo, dar a conocer tus ideas, crear y consolidar una audiencia,
+                            ofrecer servicios o posicionarte como un/a experto/a en el mercado, ¡entonces sumate hoy mismo a BlaBlaBlog!</p>
+                        <p>✍️ BlaBlaBlog es una plataforma de blogging colaborativo donde podés compartir tus experiencias e ideas con una comunidad en crecimiento.</p>
+                        <p>💸 Y lo mejor de todo es que BlaBlaBlog es gratuito y nunca dejará de serlo.</p>
+                        <p>🔗 ¡Invitá a tus amigos y amigas a sumarse a BlaBlaBlog! Con una comunidad más grande, ¡crecemos todos!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Divider-->
+                <hr class="my-4" />
+            </div>
+            <div class="container">
+                <a href="{% url 'crear-comentario' %}" class="btn btn-outline-dark flex-shrink-0">¿Querés dejarnos un comentario?</a>
+            </div>
+            <div class="container px-4 px-lg-5">
+            <p>
+                <h5>Comentarios:</h5>
+                {% for comentario in object_list %}
+                <div class='container' style="margin:50px">
+                <p>
+                <h6 class="post-subtitle">{{comentario.nombre}}</h6> 
+                </p>
+                <p class="post-meta" style="font-family: Georgia, serif">
+                {{comentario.mensaje}}.
+                </p>
+                <p style="font-family: courier">Publicado el {{comentario.fecha}}</p>
+                </div>
+                {% endfor %}
+            </p>
+            </div>
+        </main>
+{% endblock %}

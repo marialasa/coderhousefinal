@@ -1,0 +1,53 @@
+{% extends 'blog/base.html' %}
+{% block nav %}{% endblock %}
+{% block contenido %}
+{% load static %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{% static 'blog/assets/img/d.jpg' %}');">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h2>Registro</h2>
+                        <span>Complete el formulario para registrarse</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <!-- Divider-->
+    <hr class="my-4" />
+    <div class="my-5 container">
+        <form style=" width: 50vw; margin-left : 15vw;" method="post">
+            {% csrf_token %}
+        <p>
+            <label for="id_email">Correo</label>
+            <input type="email" name="email" class="form-control" placeholder="Ingrese su correo electrónico" required="" id="id_email">
+        </p>
+        <p>
+            <label for="id_username">Nombre de usuario</label>
+                <input type="text" name="username" class="form-control" maxlength="20" placeholder="Ingrese su nombre de usuario" autofocus="" required="" id="id_username">
+        </p>
+        <p>
+        <label for="id_password1">Contraseña</label>
+        <input type="password" name="password1" class="form-control" placeholder="La contraseña debe contener al menos 8 caracteres alfanuméricos" required="" id="id_password1">
+        </p>
+        <p>
+        <label for="id_password2">Repita su contraseña</label>
+        <input type="password" name="password2" class="form-control" placeholder="Recuerde no emplear contraseñas de otras cuentas" required="" id="id_password2">
+        <div class="container text-center">
+            <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Crear">
+        </div>
+        {% if form.errors %}
+        <p style="color: red;"> Los datos ingresados no son correctos, intentá nuevamente</p>
+        {% endif %}  
+        </form>
+        <div class="container position-relative px-4 px-lg-2">
+            <p align = center><small>
+            ¿Ya tenés cuenta?
+            <a href="{% url 'blog-login' %}">Iniciar sesión</a>
+            </small> </p>     
+        </div>
+    </div>
+{% endblock %}

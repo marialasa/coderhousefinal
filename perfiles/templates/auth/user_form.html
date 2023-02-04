@@ -1,0 +1,61 @@
+{% extends 'blog/base.html' %}
+{% block nav %}{% endblock %}
+{% block contenido %}
+{% load static %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{% static 'blog/assets/img/a.jpg' %}');">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h2>Actualizar</h2>
+                        <span>Completa el formulario para actualizar el usuario</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-6 px-lg-10">
+        <h4>Formulario:</h4>
+    </div>
+    <!-- Divider-->
+    <hr class="my-4" />
+        <form style=" width: 50vw; margin-left : 15vw;" method="post">
+            {% csrf_token %}
+        <p>
+        <label for="id_email">Correo</label>
+        <input type="email" name="email" class="form-control" required="" id="id_email">
+        </p>
+        <p>
+            <label for="id_username">Nombre de usuario</label>
+                <input type="text" name="username" class="form-control" maxlength="20" placeholder="Ingrese su nombre de usuario..." autofocus="" required="" id="id_username">
+                <div class="small container text-muted fst-italic"> 
+                </div>
+        </p>
+        <p>
+            <label for="id_name">Nombre</label>
+                <input type="text" name="first_name" class="form-control" placeholder="Ingrese su nombre" maxlength="20" required="" id="id_first_name">
+        </p>
+        <p>
+            <label for="id_telefono">Apellido</label>
+                <input type="text" name="last_name" class="form-control" placeholder="Ingrese su apellido" maxlength="20" required="" id="id_last_name">
+        </p>
+        <p>
+        <label for="id_password1">Contraseña</label>
+        <input type="password" name="password1" class="form-control" placeholder="Ingrese su contraseña" required="" id="id_password1">
+        </p>
+        <div class="container text-center">
+            <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Guardar">
+        </div>
+        {% if form.errors %}
+        <p style="color: red;"> Los datos ingresados no son correctos, intenta nuevamente</p>
+        {% endif %}
+        </form> 
+    <div class="container px-6 px-lg-10">
+    <p>
+        <a href="{% url 'user-list' %}">Ir a la lista de usuarios</a> |
+        <a href="{% url 'index-blog' %}">Ir a blogs de la comunidad</a>
+    </p>
+    </div>
+{% endblock %}
